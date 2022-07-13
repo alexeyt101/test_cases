@@ -15,7 +15,7 @@ def find_index_of_first_zero(array: Union[str, List[int]]) -> Optional[int]:
 
 def test_find_index_of_first_zero(array, right_answer):
     result = find_index_of_first_zero(array)
-    print(array, f'result: {result}')
+    print(f'result: {result}, expected result: {right_answer}')
     assert result == right_answer, f'Error on test case with {array} {type(array)}: right answer: {right_answer}'
 
 

@@ -65,14 +65,12 @@ def calculate_count_of_animal_names_for_each_letter(animal_names_list: List[str]
 
 def get_count_of_animal_names_for_each_letter(url: str) -> Tuple[List[str], Optional[Dict[str, int]]]:
     """
-    Get a list of animals from Wiki and print the number of animal name for each letter of 
+    Get a list of animals from Wiki and calculate the number of animal names for each letter of 
     the alphabet.
     """
     animal_names_list: List[str] = list()
 
     while url:
-        print(f'next page url: {url}')
-
         html_page = get_html_page(url)
         animal_list, url = parse_html_page(html_page)
         animal_names_list.extend(animal_list)
@@ -85,7 +83,7 @@ if __name__ == '__main__':
     
     if not res:
         print('Something was going wrong and returned None type')
-    for key, value in res.items():
+    for key, value in res[1].items():
         print(f'{key}: {value}')
 
 # P.S.
